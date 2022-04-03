@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>CASA LIVING 까사리빙</title>
+   <meta charset="utf-8"/>
+   <style>
+      /*########### 초기화 ##########*/ 
+          *{margin:0; padding:0;} 
+         li{list-style-type:none;}
+         a:link, a:visited{text-decoration:none; color:#333;}
+         a:hover,a:focus{text-decoration:underline;}
+
+      /*######## wrap ########*/
+         #wrap{min-width:1025px; width:100%; background-color:pink;} 
+
+      
+      /*##### topBarArea ####*/
+         #topBarArea{width:100%; padding:10px 0; background-color:#313131;}
+         #topBar{width:1600px; margin:0 auto;}
+         #topBar .img{width:272px; margin:0 auto;}
+         #topBar .img img{width:100%;}
+
+      /*######## header ########*/
+         #headerWrap{width:100%; padding-top:20px;}
+         #header{width:1600px; height:100px;  margin:0 auto;}
+      /*##### header / top_area ####### */
+         #header .top_area{width:100%; height:70px;}
+
+         /*로고영역*/
+         #header .logo{width:90px; float:left;}
+         #header .logo a img{width:100%;} 
+         
+         /*큰 메뉴 영역*/
+         #header .content{width:1320px; padding-top:23px; float:left;}
+         #header .content ul{width:100%; font-size:20px; font-weight:700;}
+         #header .content li{padding-left:50px; display:inline;}
+         #header .content li a:hover,#header .content li a:focus{color:#ff5000;}
+
+         /*아이콘 영역*/
+         #header .info_menu{width:180px; padding-top:10px; float:left;}
+         #header .info_menu li{width:25px; margin-left:30px; float:left;}
+         #header .info_menu a img{width:100%;}
+
+      /*##### header / bottom_area ####### */
+         #header .bottom_area{width:100%; height:20px; padding-top:16px; border-top:1px solid #f5f5f5;}
+
+         /*nav 영역*/
+         #gnb{width:1250px; font-size:17px; float:left;}
+         #gnb ul{float:left;}
+         #gnb li a:hover,#gnb li a:focus{text-decoration:underline;}
+         #gnb .cate{border-right:1px solid #ccc; padding-right:15px;}
+         #gnb .sub_cate{padding-left:50px;}
+         #gnb li{display:inline; padding-right:40px;}
+
+         /*검색창 영역*/
+         #header form{width:350px; height:20px; text-align:right; float:left; }
+         #header fieldset{border:none;}
+         #header legend{display:none;}
+         #header form #search{width:180px; height:28px; border:1px solid #adadad; color:#ccc; text-indent:15px; }
+         #header form #btn{width:55px; height:30px; border:1px solid #ccc; vertical-align:middle;}
+
+
+      /*######## container ########*/
+         #container{width:100%; padding-top:30px;}
+         /*visual영역*/
+         #visual img{width:100%;}
+
+      /*####### section (전체 사용 영역) #######*/
+         #section{width:100%;}
+
+      /*####### section / sect0(실제 사용 영역) #######*/
+         #sect0{width:1760px; padding-left:140px; height:1372px; padding-top:250px; margin:0 auto;}
+
+      /*####### section / sect0 / brandGrid(width:516px;)#######*/
+         #brandGrid{width:485px; height:100%; padding-right:30px; border-right:1px solid #ccc; float:left;}
+         #brandGrid ul{width:100%; height:100%;}
+         #brandGrid li{width:100%; height:50%; overflow:hidden;}
+
+         /*brandGrid 썸네일 영역(이미지 크기 485 * 485)*/
+         #brandGrid .thumb{width:100%; height:485px; overflow:hidden;}
+         #brandGrid .thumb a img{width:100%; transition:transform 1s linear;}
+         #brandGrid .thumb:hover a img{transform:scale(1.1,1.1);}
+         
+         /*brandGrid 텍스트 영역*/
+         #brandGrid .text_area{width:100%; padding-top:20px;}
+         #brandGrid .text_area h3{height:40px; line-height:40px; font-size:25px; font-weight:400; overflow:hidden; white-space:nowrap; text-overflow:ellpsis;}
+
+      /*####### section / sect0 / prodGrid0(width:373px) #######*/
+         #prodGrid0{width:342px; padding-left:30px;  margin-right:1px; height:100%; float:left;}
+         #prodGrid0 ul{width:100%; height:100%;}
+         #prodGrid0 li{width:100%; height:342px; margin-bottom:1px; position:relative; overflow:hidden;}
+         #prodGrid0 a{display:block;}
+         #prodGrid0 .thumb{width:100%; transition:transform 1s linear;}
+         #prodGrid0 li:hover .thumb{transform:scale(1.2,1.2);}
+         #prodGrid0 .thumb img{width:100%;}
+         #prodGrid0 .text_box{width:100%; height:100%; background-color:rgba(0,0,0,0.5); position:absolute; left:0; top:0; display:none;}
+         #prodGrid0 li:hover .text_box{display:block;}
+         #prodGrid0 .text_box a{margin-top:130px; text-align:center; font-size:15px;}
+         #prodGrid0 .text_box a span{line-height:50px; padding:2px 10px; border:1px solid #fff;  color:#fff;}
+         #prodGrid0 .text_box a em{font-style:normal; color:#fff;}
+         
+
+      /*####### section / sect0 / prodRoll0(width:871px) #######*/
+         #prodRoll0{width:871px; height:686px; margin-bottom:1px; float:left;}
+         #prodRoll0 ul{width:100%; height:100%;}
+         #prodRoll0 li{width:100%; height:100%; position:relative; overflow:hidden;}
+         #prodRoll0 .img{width:100%;}
+         #prodRoll0 .img a img{width:100%;}
+         #prodRoll0 .text_box{padding-top:6px; position:absolute; left:100px; top:50px;}
+         
+         
+         #prodRoll0 .text_box .brand a{padding:5px 20px; border:1px solid #ccc; font-size:18px;}
+         #prodRoll0 .text_box .title a{line-height:100px; font-size:20px;}
+         
+
+      /*####### section / sect0 / magazine(width:711px) #######*/
+         #magazine{width:711px; float:left; position:relative;}
+         #magazine .img{width:100%;}
+         #magazine .img a img{width:100%;}
+
+         #magazine .text_box{position:absolute; left:50px; top:50px; transition:left 0.5s linear;}
+         #magazine:hover .text_box{position:absolute; left:70px; top:50px;}
+         #magazine .title a{font-size:30px; line-height:50px;  color:#fff;}
+         #magazine .desc a{font-size:15px; color:#fff;}
+
+
+      /*####### section / sect1(실제 사용 영역) #######*/
+         #sect1{width:1760px; padding-right:140px; height:804px; padding-top:80px; margin:0 auto;}
+
+      /*####### section / sect1 / prodRoll1(width:1029px) #######*/
+         #prodRoll1{width:1028px; height:100%; margin-right:1px; float:left; background-color:#fff;}
+         #prodRoll1 ul{width:100%; height:100%;}
+         #prodRoll1 li{width:100%; height:100%; position:relative;}
+         #prodRoll1 .img{width:100%; height:100%; display:block;}
+         #prodRoll1 .img a img{height:100%;}
+         #prodRoll1 .text_box{padding-top:6px; text-align:right; position:absolute;right:100px; top:50px;}
+         #prodRoll1 .text_box .brand a{padding:5px 20px; border:1px solid #ccc; font-size:18px;}
+         #prodRoll1 .text_box .title a{line-height:100px; font-size:20px;}
+
+
+      /*####### section / sect1 / prodGrid1(width:711px) #######*/
+         #prodGrid1{width:711px; float:left;}
+         #prodGrid1 ul{width:100%;}
+         #prodGrid1 li{margin-bottom:10px; position:relative;}
+         
+         #prodGrid1 .img{width:100%;}
+         #prodGrid1 .img a img{width:100%;}
+
+         #prodGrid1 .text_box{position:absolute; left:50px; top:50px;transition:left 0.5s linear;}
+         #prodGrid1 li:hover .text_box{position:absolute; left:70px; top:50px;}
+         #prodGrid1 .title a{font-size:30px; line-height:50px;  color:#fff;}
+         #prodGrid1 .desc a{font-size:15px; color:#fff;}
+         
+         
+      /*subVisual0(중간백그라운드영역)*/
+         #subVisual0{width:100%; height:800px; padding-top:300px;}
+         #subVisual0 .bg{width:100%; height:100%; background-image:url("img/bg0.jpg"); background-repeat:no-repeat;}
+
+      /*######## mdPickArea #######*/
+         #mdPickArea{width:100%;}
+
+      /*######## mdPickArea / mdPick #######*/
+         #mdPick{width:1600px; padding-top:250px; margin:0 auto;}
+
+      /*mdPick / tab(탭베이직 영역)*/
+         #mdPick .tab{width:100%; height:30px;}
+         #mdPick .tab ul{width:640px; height:100%; margin:0 auto;}
+         #mdPick .tab li{width:160px; height:100%; font-size:20px; text-align:center; float:left;}
+         #mdPick .tab li a:hover, #mdPick .tab li a:focus{text-decoration:underline; color:#ff5000;}
+
+      /*mdPick / product_list(상품리스트 영역)*/
+         #mdPick .prod_list{width:100%; height:1200px; padding-top:100px;}
+         #mdPick .prod_list ul{width:100%; height:100%;}
+         #mdPick .prod_list li{width:310px; margin-right:10px; float:left;}
+
+         /*리스트 썸네일 영역*/
+         #mdPick .img_area a{display:block;}
+         #mdPick a .img{width:300px; height:300px; padding:5px; background-color:#efefef; text-align:center; display:block;}
+         #mdPick .img img{height:100%;}
+         /*리스트 텍스트 영역*/
+         #mdPick .texts{width:100%; padding:30px 0 60px;}
+         #mdPick .texts .br_icon a{padding:5px 15px; border:1px solid #333;}
+         #mdPick .texts .br_icon a:hover, #mdPick .texts .br_icon a:focus{background-color:#333; color:#fff;}
+         #mdPick .texts .title{line-height:55px;}
+         #mdPick .texts .title a:hover, #mdPick .texts .title a:focus{text-decoration:underline;}
+         #mdPick .texts .price{font-weight:700;}
+
+      /*######## 인스타그램 리뷰 #######*/
+         #snsArea{width:100%; height:700px; padding-top:180px; background-color:#efefef;}
+         #snsArea h3{line-height:150px; font-size:30px; font-weight:400; text-align:center;}
+
+         #snsW{width:1400px; height:275px; margin:0 auto;}
+         #snsW ul{width:100%; height:100%;}
+         #snsW li{width:275px; height:275px; margin-right:5px; overflow:hidden; float:left;}
+         #snsW a{width:100%; height:100%; display:block;}
+         #snsW span{width:100%; height:100%; display:block;}
+         #snsW span img{width:100%;}
+
+      /*####### footer #######*/
+         #footer{width:100%;}
+         #footer .top_menu{width:100%; border-top:2px solid #ccc; border-bottom:2px solid #ccc;}
+         #footer .menu{width:1200px; height:40px; line-height:40px; margin:0 auto;}
+         #footer .menu li{display:inline; padding-right:40px; font-size:15px; }
+
+         #footer .bottomW{width:100%; padding-top:80px;}
+         #footer .bottom{width:1200px; height:320px; line-height:25px; font-size:15px; color:#777; margin:0 auto;}
+         #footer .logo{padding-right:200px; float:left;}
+         #footer .img{width:100px;}
+         #footer .img img{width:100%;}
+         #footer .info{padding-right:200px; float:left;}
+         #footer .info h4{height:50px; font-size:18px;}
+         #footer .info p{}
+         #footer .info .b_info{padding-top:10px;}
+         #footer .info .b_info a{padding:3px 15px; border:1px solid #777; color:#777; font-size:15px;}
+         #footer .service{float:left;}
+         #footer .sns{height:50px;}
+         #footer .sns li{width:25px; padding-right:20px;  float:left;}
+         #footer .sns li a img{width:100%;}
+
+         #footer .center{width:300px; padding:15px 30px; border-radius:10px;  background-color:#f7f7f7;}
+         #footer .center strong{font-size:18px;}
+         #footer .center em{line-height:60px; font-style:normal; font-size:40px; font-weight:700;}
+         #footer .center p{width:100%;}
+         #footer .center span{padding-right:10px;}
+         #footer .center b{font-weight:700;}
+
+         
+   </style>
+ </head>
+
+ <body>
+	<div id="wrap">
+      <!--topBar 영역-->
+      <div id="topBarArea">
+         <div id="topBar">
+            <p class="img">
+               <a href="#" title="신규이벤트">
+                  <img src="img/top0.jpg" alt="이벤트0"/>
+               </a>
+            </p>
+         </div>
+      </div>
+      <!--header 전체 사용 영역-->
+      <div id="headerWrap">
+         <div id="header">
+            <div class="top_area">
+               <div class="logo">
+                  <a href="https://www.casa.co.kr/" title="까사리빙">
+                     <img src="img/logo.gif" alt="까사리빙로고"/>
+                  </a>
+               </div>
+               <div class="content">
+                  <ul>
+                     <li><a href="magazine/main.html" title="MAGAZINE">MAGAZINE</a></li>
+                     <li><a href="brand/main.html" title="BRANDS">BRANDS</a></li>
+                     <li><a href="#" title="SHOW">SHOW</a></li>
+                     <li><a href="#" title="EVENT">EVENT</a></li>
+                  </ul>
+               </div>
+               <div class="info_menu">
+                  <ul>
+                     <li>
+                        <a href="#" title="로그인">
+                           <img src="img/icon0.png" alt="로그인"/>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#" title="장바구니">
+                           <img src="img/icon1.png" alt="장바구니"/>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#" title="고객센터">
+                           <img src="img/icon2.png" alt="고객센터"/>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="bottom_area">
+               <div id="gnb">
+                  <ul class="cate">
+                     <li>
+                        <a href="#" title="FURNITURE">FURNITURE</a>
+                     </li>
+                     <li>
+                        <a href="#" title="HOMEWARE">HOMEWARE</a>
+                     </li>
+                     <li>
+                        <a href="#" title="LIGHTING">LIGHTING</a>
+                     </li>
+                     <li>
+                        <a href="#" title="LIFE">LIFE</a>
+                     </li>
+                  </ul>
+                  <ul class="sub_cate">
+                     <li>
+                        <a href="#" title="BEST">BEST</a>
+                     </li>
+                     <li>
+                        <a href="#" title="NEW">NEW</a>
+                     </li>
+                     <li>
+                        <a href="#" title="LIKE IT">LIKE IT</a>
+                     </li>
+                  </ul>
+               </div>
+               <form action="#" method="post">
+                  <fieldset>
+                     <legend>검색</legend>
+                        <input id="search" type="text" name="search" title="검색" value="search"/><input id="btn" type="submit" value="검색"/>
+                  </fieldset>
+               </form>
+            </div>
+         </div>
+      </div>
+      <!--container 전체 사용 영역-->
+      <div id="container">
+         <!--visial 전체 사용 영역-->
+         <div id="visual">
+            <img src="img/main.png" alt="메인이미지"/>
+         </div>
+         <!--첫번째 section 영역-->
+         <div id="section">
+            <!--첫번째 section영역에서 0번 영역-->
+            <div id="sect0">
+               <div id="brandGrid">
+                  <ul>
+                     <li>
+                        <p class="thumb">
+                           <a href="#" title="volta">
+                              <img src="img/br0.jpeg" alt="브랜드이미지0"/>
+                           </a>
+                        </p>
+                        <div class="text_area">
+                           <h3>
+                              <a href="#" title="volta">Design for spring, Mobile VOLTA.</a>
+                           </h3>
+                           <p>
+                              <a href="#" title="volta">
+                                 Welcome spring with bright color mobiles! Volta, a modern reinterpretation of the work of Alexander Calder, the founder of Mobile, presents a colorful design mobile. Thanks to the ideal formative beauty and color, it gives the impression of seeing artistic paintings.
+                              </a>
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <p class="thumb">
+                           <a href="#" title="volta">
+                              <img src="img/br1.jpeg" alt="브랜드이미지2"/>
+                           </a>
+                        </p>
+                        <div class="text_area">
+                           <h3>
+                              <a href="#" title="FOPPAPEDRETTI">
+                                 It's easy and enjoyable to do housework. FOPPAPEDRETTI.
+                              </a>
+                           </h3>
+                           <p>
+                              <a href="#" title="FOPPAPEDRETTI">
+                                 If you're tired of the never-ending housework, meet Poppa Pedretti. Poppa Pedreti, a must-have item for Italian families, studies designs that simplify housework. In particular, Aso Ironing Board and Gulliver Dryer, released in the 1980s, are still loved bestsellers.
+                              </a>
+                           </p>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+               <div id="prodGrid0">
+                  <ul>
+                     <li>
+                        <p class="thumb">
+                           <img src="img/pr_g0_0.jpeg" alt="상품이미지0"/>
+                        </p>
+                        <p class="text_box">
+                           <a href="#" title="상품페이지0">
+                              <span>CSLV</span><br/>
+                              <em>아볼트 스퀘어 원</em>
+                           </a>
+                        </p>
+                     </li>
+                     <li>
+                        <p class="thumb">
+                           <img src="img/pr_g0_1.jpeg" alt="상품이미지1"/>
+                        </p>
+                        <p class="text_box">
+                           <a href="#" title="상품페이지1">
+                              <span>CSLV</span><br/>
+                              <em>아볼트 스퀘어 원</em>
+                           </a>
+                        </p>
+                     </li>
+                     <li>
+                        <p class="thumb">
+                           <img src="img/pr_g0_2.jpeg" alt="상품이미지2"/>
+                        </p>
+                        <p class="text_box">
+                           <a href="#" title="상품페이지2">
+                              <span>CSLV</span><br/>
+                              <em>아볼트 스퀘어 원</em>
+                           </a>
+                        </p>
+                     </li>
+                     <li>
+                        <p class="thumb">
+                           <img src="img/pr_g0_3.jpeg" alt="상품이미지3"/>
+                        </p>
+                        <p class="text_box">
+                           <a href="#" title="상품페이지3">
+                              <span>CSLV</span><br/>
+                              <em>아볼트 스퀘어 원</em>
+                           </a>
+                        </p>
+                     </li>
+                     
+                  </ul>
+               </div>
+               <div id="prodRoll0">
+                  <ul>
+                     <li>
+                        <p class="img">
+                           <a href="#" title="상품페이지0_0">
+                              <img src="img/roll0_0.jpg" alt="롤링이미지0_0"/>
+                           </a>
+                        </p>
+                        <div class="text_box">
+                           <p class="brand">
+                              <a href="#" title="artek">artek</a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품링크0">
+                                 Alto table 82B_White laminate
+                              </a>
+                           </p>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+               <div id="magazine">
+                  <p class="img">
+                     <a href="#" title="매거진링크">
+                        <img src="img/mgz0.jpeg" alt="매거진이미지0"/>
+                     </a>
+                  </p>
+                  <div class="text_box">
+                     <p class="title"><a href="#" title="아이템5">Whose Shopping Cart</a></p>
+                     <p class="desc"><a href="#" title="아이템5">인플루언서 무키가 고른 아이템 5</a></p>
+                  </div>
+                  </a>
+               </div>
+            </div>
+            <!--첫번째 section영역에서 1번 영역-->
+            <div id="sect1">
+               <div id="prodRoll1">
+                  <ul>
+                     <li>
+                        <p class="img">
+                           <a href="#" title="상품페이지0_0">
+                              <img src="img/roll1_0.jpg" alt="롤링이미지1_0"/>
+                           </a>
+                        </p>
+                        <div class="text_box">
+                           <p class="brand">
+                              <a href="#" title="SKAGERAK">SKAGERAK</a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품링크0">
+                                 커터 벤치_오크 (S1920405)
+                              </a>
+                           </p>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+               <div id="prodGrid1">
+                  <ul>
+                     <li>
+                        <p class="img">
+                           <a href="#" title="영감을 주는 그림">
+                              <img src="img/pr_g1_0.jpeg" alt="상품이미지0_0"/>
+                           </a>
+                        </p>
+                        <div class="text_box">
+                           <p class="title"><a href="#" title="영감을 주는 그림">Image Republic</a></p>
+                           <p class="desc"><a href="#" title="영감을 주는 그림">영감을 주는 그림</a></p>
+                        </div>
+                     </li>
+                     <li>
+                        <p class="img">
+                           <a href="#" title="행복을 부르는 부엌">
+                              <img src="img/pr_g1_1.jpeg" alt="상품이미지0_1"/>
+                           </a>
+                        </p>
+                        <div class="text_box">
+                           <p class="title"><a href="#" title="행복을 부르는 부엌">ALESSI</a></p>
+                           <p class="desc"><a href="#" title="행복을 부르는 부엌">행복을 부르는 부엌</a></p>
+                        </div>
+                     </li>
+                     
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div id="subVisual0">
+            <div class="bg">
+               
+            </div>
+         </div>
+         <!--mdpick 전체 사용 영역-->
+         <div id="mdPickArea">
+            <!--mdpick 실제 사용 영역-->
+            <div id="mdPick">
+               <!--mdpick/텝베이직 영역-->
+               <div class="tab">
+                  <ul>
+                     <li>
+                        <a href="#" title="FURNITURE">FURNITURE</a>
+                     </li>
+                     <li>
+                        <a href="#" title="HOMEWARE">HOMEWARE</a>
+                     </li>
+                     <li>
+                        <a href="#" title="LIGHTING">LIGHTING</a>
+                     </li>
+                     <li>
+                        <a href="#" title="LIFE">LIFE</a>
+                     </li>
+                  </ul>
+               </div>
+               <!--mdpick/상품리스트 영역-->
+               <div class="prod_list">
+                  <ul>
+                     <li>
+                        <div class="img_area">
+                           <a href="#" title="상품페이지0">
+                              <span class="img">
+                                 <img src="img/li0.png" alt="상품이미지0"/>
+                              </span>
+                           </a>
+                        </div>
+                        <div class="texts">
+                           <p class="br_icon">
+                              <a href="#" title="브랜드페이지">
+                                 SKAGERAK                           
+                              </a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품페이지0">
+                                 커터 스툴_오크
+                              </a>
+                           </p>
+                           <p class="price">
+                              637,000
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="img_area">
+                           <a href="#" title="상품페이지1">
+                              <span class="img">
+                                 <img src="img/li1.jpg" alt="상품이미지1"/>
+                              </span>
+                           </a>
+                        </div>
+                        <div class="texts">
+                           <p class="br_icon">
+                              <a href="#" title="브랜드페이지">
+                                 TON                      
+                              </a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품페이지1">
+                                 돈 체어 아이로니카/내추럴
+                              </a>
+                           </p>
+                           <p class="price">
+                              175,000
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="img_area">
+                           <a href="#" title="상품페이지2">
+                              <span class="img">
+                                 <img src="img/li2.png" alt="상품이미지2"/>
+                              </span>
+                           </a>
+                        </div>
+                        <div class="texts">
+                           <p class="br_icon">
+                              <a href="#" title="브랜드페이지">
+                                 vitra            
+                              </a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품페이지2">
+                                 비트라 팁 톤 체어_인더스트리얼 그린
+                              </a>
+                           </p>
+                           <p class="price">
+                              430,000
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="img_area">
+                           <a href="#" title="상품페이지3">
+                              <span class="img">
+                                 <img src="img/li3.png" alt="상품이미지3"/>
+                              </span>
+                           </a>
+                        </div>
+                        <div class="texts">
+                           <p class="br_icon">
+                              <a href="#" title="브랜드페이지">
+                                 vitra                        
+                              </a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품페이지3">
+                                 비트라 팬톤 체어_클래식 레드
+                              </a>
+                           </p>
+                           <p class="price">
+                              500,000
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="img_area">
+                           <a href="#" title="상품페이지4">
+                              <span class="img">
+                                 <img src="img/li4.png" alt="상품이미지4"/>
+                              </span>
+                           </a>
+                        </div>
+                        <div class="texts">
+                           <p class="br_icon">
+                              <a href="#" title="브랜드페이지">
+                                 artek                      
+                              </a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품페이지4">
+                                 스툴 60_그린
+                              </a>
+                           </p>
+                           <p class="price">
+                              410,000
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="img_area">
+                           <a href="#" title="상품페이지5">
+                              <span class="img">
+                                 <img src="img/li5.png" alt="상품이미지5"/>
+                              </span>
+                           </a>
+                        </div>
+                        <div class="texts">
+                           <p class="br_icon">
+                              <a href="#" title="브랜드페이지">
+                                 vitra                   
+                              </a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품페이지5">
+                                 비트라 스탠다드 체어_내추럴 오크/딥  블랙
+                              </a>
+                           </p>
+                           <p class="price">
+                              1,140,000
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="img_area">
+                           <a href="#" title="상품페이지6">
+                              <span class="img">
+                                 <img src="img/li6.png" alt="상품이미지6"/>
+                              </span>
+                           </a>
+                        </div>
+                        <div class="texts">
+                           <p class="br_icon">
+                              <a href="#" title="브랜드페이지">
+                                 TON                       
+                              </a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품페이지6">
+                                 톤 체어 어게인_라이트 내추럴
+                              </a>
+                           </p>
+                           <p class="price">
+                              478,000
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="img_area">
+                           <a href="#" title="상품페이지7">
+                              <span class="img">
+                                 <img src="img/li7.png" alt="상품이미지7"/>
+                              </span>
+                           </a>
+                        </div>
+                        <div class="texts">
+                           <p class="br_icon">
+                              <a href="#" title="브랜드페이지">
+                                 HAY                           
+                              </a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품페이지0">
+                                 니트 코트랙_토피(941101)
+                              </a>
+                           </p>
+                           <p class="price">
+                              300,000
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="img_area">
+                           <a href="#" title="상품페이지8">
+                              <span class="img">
+                                 <img src="img/li8.png" alt="상품이미지8"/>
+                              </span>
+                           </a>
+                        </div>
+                        <div class="texts">
+                           <p class="br_icon">
+                              <a href="#" title="브랜드페이지">
+                                 artek                         
+                              </a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품페이지0">
+                                 윌 쉘프 112B_내추럴 버치
+                              </a>
+                           </p>
+                           <p class="price">
+                              670,000
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="img_area">
+                           <a href="#" title="상품페이지9">
+                              <span class="img">
+                                 <img src="img/li9.png" alt="상품이미지9"/>
+                              </span>
+                           </a>
+                        </div>
+                        <div class="texts">
+                           <p class="br_icon">
+                              <a href="#" title="브랜드페이지">
+                                 hem                           
+                              </a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품페이지0">
+                                 지그재그 TV 벤치_오크
+                              </a>
+                           </p>
+                           <p class="price">
+                              1,160,000
+                           </p>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <!--인스타그램 전체 사용 영역-->
+         <div id="snsArea">
+            <h3>CSLV 리뷰클럽</h3>
+            <!--인스타그램 실제 사용 영역-->
+            <div id="snsW">
+               <ul>
+                  <li>
+                     <a href="#" title="리뷰0">
+                        <span>
+                           <img src="img/ins0.jpg" alt="인스타리뷰0"/>
+                        </span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" title="리뷰1">
+                        <span>
+                           <img src="img/ins1.jpg" alt="인스타리뷰1"/>
+                        </span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" title="리뷰2">
+                        <span>
+                           <img src="img/ins2.jpg" alt="인스타리뷰2"/>
+                        </span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" title="리뷰3">
+                        <span>
+                           <img src="img/ins3.jpg" alt="인스타리뷰3"/>
+                        </span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" title="리뷰4">
+                        <span>
+                           <img src="img/ins4.jpg" alt="인스타리뷰4"/>
+                        </span>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <!--footer 전체 사용 영역-->
+      <div id="footer">
+         <div class="top_menu">
+            <ul class="menu">
+               <li>
+                  <a href="#" title="까사리빙_소개">까사리빙 소개</a>
+               </li>
+               <li>
+                  <a href="#" title="개인정보취급방침">개인정보취급방침</a>
+               </li>
+               <li>
+                  <a href="#" title="이용약관">이용약관</a>
+               </li>
+               <li>
+                  <a href="#" title="입점문의">입점문의</a>
+               </li>
+            </ul>
+         </div>
+         <div class="bottomW">
+            <div class="bottom">
+               <div class="logo">
+                  <p class="img">
+                     <img src="img/logo.gif" alt="로고"/>
+                  </p>
+               </div>
+               <div class="info">
+                  <h4>(주)시공사</h4>
+                  <p>대표자 : 윤호권, 박현용</p>
+                  <p>개인정보책임자 : 이시민 cs@casa.co.kr</p>
+                  <p>고객센터 1644-4676</p>
+                  <p>서울특별시 성동구 성수동1가 656-1748</p>
+                  <p>사업자번호 : 214-81-33375</p>
+                  <p>통신판매업신고 제2001-서울서초-00591호</p>
+                  <p class="b_info">
+                     <a href="#" title="">사업자정보확인</a>
+                  </p>
+               </div>
+               <div class="service">
+                  <ul class="sns">
+                     <li>
+                        <a href="#" title="인스타그램 주소">
+                           <img src="img/btn_footer_sns_instargram.png" alt="인스타그램_버튼"/>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#" title="인스타그램 주소">
+                           <img src="img/btn_footer_sns_instargram.png" alt="인스타그램_버튼"/>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#" title="인스타그램 주소">
+                           <img src="img/btn_footer_sns_instargram.png" alt="인스타그램_버튼"/>
+                        </a>
+                     </li>
+                  </ul>
+                  <div class="center">
+                     <p><strong>SC CENTER</strong></p>
+                     <p><em>1644-4676</em></p>
+                     <p><span>09:00~16:30</span> <b>MON-FRI</b></p>
+                     <p><span>12:00~13:10</span> <b>MON-FRI</b></p>
+                     <p><span>WEEKEND/HOLIDAY</span> <b>OFF</b></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+ </body>
+</html>
