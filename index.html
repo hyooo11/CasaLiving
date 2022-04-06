@@ -5,15 +5,14 @@
    <meta charset="utf-8"/>
    <style>
       /*########### 초기화 ##########*/ 
-          *{margin:0; padding:0;} 
+         *{margin:0; padding:0;}
          li{list-style-type:none;}
          a:link, a:visited{text-decoration:none; color:#333;}
          a:hover,a:focus{text-decoration:underline;}
 
       /*######## wrap ########*/
-         #wrap{min-width:1025px; width:100%; background-color:pink;} 
+         #wrap{min-width:1025px; width:100%;}
 
-      
       /*##### topBarArea ####*/
          #topBarArea{width:100%; padding:10px 0; background-color:#313131;}
          #topBar{width:1600px; margin:0 auto;}
@@ -66,10 +65,10 @@
          #visual img{width:100%;}
 
       /*####### section (전체 사용 영역) #######*/
-         #section{width:100%;}
+         #mainGrid{width:100%;}
 
       /*####### section / sect0(실제 사용 영역) #######*/
-         #sect0{width:1760px; padding-left:140px; height:1372px; padding-top:250px; margin:0 auto;}
+         #grid0{width:1760px; padding-left:140px; height:1372px; padding-top:250px; margin:0 auto;}
 
       /*####### section / sect0 / brandGrid(width:516px;)#######*/
          #brandGrid{width:485px; height:100%; padding-right:30px; border-right:1px solid #ccc; float:left;}
@@ -101,9 +100,9 @@
          
 
       /*####### section / sect0 / prodRoll0(width:871px) #######*/
-         #prodRoll0{width:871px; height:686px; margin-bottom:1px; float:left;}
-         #prodRoll0 ul{width:100%; height:100%;}
-         #prodRoll0 li{width:100%; height:100%; position:relative; overflow:hidden;}
+         #prodRoll0{width:871px; height:686px; margin-bottom:1px; float:left; /*overflow:hidden;*/}
+         #prodRoll0 ul{width:4355px; height:100%;}
+         #prodRoll0 li{width:871px; height:100%; position:relative; overflow:hidden; float:left;}
          #prodRoll0 .img{width:100%;}
          #prodRoll0 .img a img{width:100%;}
          #prodRoll0 .text_box{padding-top:6px; position:absolute; left:100px; top:50px;}
@@ -125,12 +124,12 @@
 
 
       /*####### section / sect1(실제 사용 영역) #######*/
-         #sect1{width:1760px; padding-right:140px; height:804px; padding-top:80px; margin:0 auto;}
+         #grid1{width:1760px; padding-right:140px; height:804px; padding-top:80px; margin:0 auto;}
 
       /*####### section / sect1 / prodRoll1(width:1029px) #######*/
-         #prodRoll1{width:1028px; height:100%; margin-right:1px; float:left; background-color:#fff;}
-         #prodRoll1 ul{width:100%; height:100%;}
-         #prodRoll1 li{width:100%; height:100%; position:relative;}
+         #prodRoll1{width:871px; height:100%; margin-right:1px; float:left; background-color:#fff; /*overflow:hidden;*/}
+         #prodRoll1 ul{width:4355px; height:100%;}
+         #prodRoll1 li{width:871px; height:100%; position:relative; float:left;}
          #prodRoll1 .img{width:100%; height:100%; display:block;}
          #prodRoll1 .img a img{height:100%;}
          #prodRoll1 .text_box{padding-top:6px; text-align:right; position:absolute;right:100px; top:50px;}
@@ -154,7 +153,7 @@
          
       /*subVisual0(중간백그라운드영역)*/
          #subVisual0{width:100%; height:800px; padding-top:300px;}
-         #subVisual0 .bg{width:100%; height:100%; background-image:url("img/bg0.jpg"); background-repeat:no-repeat;}
+         #subVisual0 .bg{width:100%; height:100%; background-image:url("img/bg0.jpg"); background-repeat:no-repeat; background-position:center;}
 
       /*######## mdPickArea #######*/
          #mdPickArea{width:100%;}
@@ -209,7 +208,6 @@
          #footer .img img{width:100%;}
          #footer .info{padding-right:200px; float:left;}
          #footer .info h4{height:50px; font-size:18px;}
-         #footer .info p{}
          #footer .info .b_info{padding-top:10px;}
          #footer .info .b_info a{padding:3px 15px; border:1px solid #777; color:#777; font-size:15px;}
          #footer .service{float:left;}
@@ -224,12 +222,20 @@
          #footer .center span{padding-right:10px;}
          #footer .center b{font-weight:700;}
 
+      /*############# headline 임시보관소##################*/
+         h2{position:absolute; left:-9999px; width:1px; height:1px; font-size:1px; line-height:0; overflow:hidden;}
+ 
          
    </style>
  </head>
 
  <body>
 	<div id="wrap">
+      <!--skipNav 영영-->
+      <div id="skipNav">
+         <div id="skip">
+         </div>
+      </div>
       <!--topBar 영역-->
       <div id="topBarArea">
          <div id="topBar">
@@ -278,7 +284,7 @@
                </div>
             </div>
             <div class="bottom_area">
-               <div id="gnb">
+               <nav id="gnb">
                   <ul class="cate">
                      <li>
                         <a href="#" title="FURNITURE">FURNITURE</a>
@@ -304,7 +310,7 @@
                         <a href="#" title="LIKE IT">LIKE IT</a>
                      </li>
                   </ul>
-               </div>
+               </n>
                <form action="#" method="post">
                   <fieldset>
                      <legend>검색</legend>
@@ -321,9 +327,10 @@
             <img src="img/main.png" alt="메인이미지"/>
          </div>
          <!--첫번째 section 영역-->
-         <div id="section">
+         <section id="mainGrid">
+            <h2>첫번째 그리드(매거진) 영역</h2>
             <!--첫번째 section영역에서 0번 영역-->
-            <div id="sect0">
+            <div id="grid0">
                <div id="brandGrid">
                   <ul>
                      <li>
@@ -423,6 +430,78 @@
                         </p>
                         <div class="text_box">
                            <p class="brand">
+                              <a href="#" title="L/C Stendal">L&amp;C Stendal</a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품링크0">
+                                 컨투어 데스크
+                              </a>
+                           </p>
+                           <p class="price">3,740,000</p>
+                        </div>
+                     </li>
+                     <li>
+                        <p class="img">
+                           <a href="#" title="상품페이지0_1">
+                              <img src="img/roll0_1.jpg" alt="롤링이미지0_1"/>
+                           </a>
+                        </p>
+                        <div class="text_box">
+                           <p class="brand">
+                              <a href="#" title="TON">TON</a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품링크0">
+                                 톤 리프 원형 테이블 Ø1270 - 내추럴 오크
+                              </a>
+                           </p>
+                           <p class="price">
+                              2,688,000
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <p class="img">
+                           <a href="#" title="상품페이지0_2">
+                              <img src="img/roll0_2.jpg" alt="롤링이미지0_2"/>
+                           </a>
+                        </p>
+                        <div class="text_box">
+                           <p class="brand">
+                              <a href="#" title="artek">artek</a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품링크0">
+                                 Alto table 82B_White laminate
+                              </a>
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <p class="img">
+                           <a href="#" title="상품페이지0_3">
+                              <img src="img/roll0_3.jpg" alt="롤링이미지0_3"/>
+                           </a>
+                        </p>
+                        <div class="text_box">
+                           <p class="brand">
+                              <a href="#" title="artek">artek</a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품링크0">
+                                 Alto table 82B_White laminate
+                              </a>
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <p class="img">
+                           <a href="#" title="상품페이지0_4">
+                              <img src="img/roll0_4.jpg" alt="롤링이미지0_4"/>
+                           </a>
+                        </p>
+                        <div class="text_box">
+                           <p class="brand">
                               <a href="#" title="artek">artek</a>
                            </p>
                            <p class="title">
@@ -448,7 +527,7 @@
                </div>
             </div>
             <!--첫번째 section영역에서 1번 영역-->
-            <div id="sect1">
+            <div id="grid1">
                <div id="prodRoll1">
                   <ul>
                      <li>
@@ -459,13 +538,86 @@
                         </p>
                         <div class="text_box">
                            <p class="brand">
-                              <a href="#" title="SKAGERAK">SKAGERAK</a>
+                              <a href="#" title="FUMIRIUM">FUMIRIUM</a>
                            </p>
                            <p class="title">
                               <a href="#" title="상품링크0">
-                                 커터 벤치_오크 (S1920405)
+                                 퍼미리움 인센스 퍼포머_오리지널
                               </a>
                            </p>
+                           <p class="price">320,000</p>
+                        </div>
+                     </li>
+                     <li>
+                        <p class="img">
+                           <a href="#" title="상품페이지0_1">
+                              <img src="img/roll1_1.jpg" alt="롤링이미지1_1"/>
+                           </a>
+                        </p>
+                        <div class="text_box">
+                           <p class="brand">
+                              <a href="#" title="möve">möve</a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품링크0">
+                                 애슬레저 타월_단색 (2 sizes)
+                              </a>
+                           </p>
+                           <p class="price">30,000</p>
+                        </div>
+                     </li>
+                     <li>
+                        <p class="img">
+                           <a href="#" title="상품페이지0_2">
+                              <img src="img/roll1_2.jpg" alt="롤링이미지1_2"/>
+                           </a>
+                        </p>
+                        <div class="text_box">
+                           <p class="brand">
+                              <a href="#" title="CSLV">CSLV</a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품링크0">
+                                 아볼트 스퀘어 원
+                              </a>
+                           </p>
+                           <p class="price">73,000</p>
+                        </div>
+                     </li>
+                     <li>
+                        <p class="img">
+                           <a href="#" title="상품페이지0_3">
+                              <img src="img/roll1_3.jpg" alt="롤링이미지1_3"/>
+                           </a>
+                        </p>
+                        <div class="text_box">
+                           <p class="brand">
+                              <a href="#" title="hem">hem</a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품링크0">
+                                 라스트 스툴 스플래터_블루/오렌지
+                              </a>
+                           </p>
+                           <p class="price">680,000</p>
+                        </div>
+                     </li>
+                     <li>
+                        <p class="img">
+                           <a href="#" title="상품페이지0_4">
+                              <img src="img/roll1_4.jpg" alt="롤링이미지1_4"/>
+                           </a>
+                        </p>
+                        <div class="text_box">
+                           <p class="brand">
+                              <a href="#" title="KABINE">KABINE</a>
+                           </p>
+                           <p class="title">
+                              <a href="#" title="상품링크0">
+                                 까비네 102 로우 2 도어_올리브 그린
+                              </a>
+                           </p>
+                           <p class="price">750,000</p>
                         </div>
                      </li>
                   </ul>
@@ -498,14 +650,13 @@
                   </ul>
                </div>
             </div>
-         </div>
+         </section>
          <div id="subVisual0">
-            <div class="bg">
-               
-            </div>
+            <div class="bg"></div>
          </div>
          <!--mdpick 전체 사용 영역-->
-         <div id="mdPickArea">
+         <section id="mdPickArea">
+            <h2>mdPick 상품 리스트 영역</h2>
             <!--mdpick 실제 사용 영역-->
             <div id="mdPick">
                <!--mdpick/텝베이직 영역-->
@@ -771,9 +922,9 @@
                   </ul>
                </div>
             </div>
-         </div>
+         </section>
          <!--인스타그램 전체 사용 영역-->
-         <div id="snsArea">
+         <section id="snsArea">
             <h3>CSLV 리뷰클럽</h3>
             <!--인스타그램 실제 사용 영역-->
             <div id="snsW">
@@ -815,7 +966,7 @@
                   </li>
                </ul>
             </div>
-         </div>
+         </section>
       </div>
       <!--footer 전체 사용 영역-->
       <div id="footer">
