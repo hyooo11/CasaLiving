@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>SHOW | 까사리빙</title>
+   <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+   <style>
+      /*##### 초기화 #####*/
+         *{margin:0; padding:0;}
+         li{list-style-type:none;}
+         a:link,a:visited{text-decoration:none; color:#333;}
+
+         #wrap{width:100%;}
+
+      /*###### header ######*/
+         #header{width:100%; height:100px;}
+         #header h1{width:1900px; height:100%; line-height:100px; text-align:center; background-color:#333; color:#fff; margin:0 auto;}
+
+      /*###### container ######*/
+         #container{width:100%;}
+      /*titleArea*/
+         #titleArea{width:100%; height:100px; padding-top:50px;}
+         #titleArea h2{width:1600px; height:100px; font-size:65px; margin:0 auto;}
+
+      /*showList*/
+         #showList{width:100%;}
+         #showList ul{width:1600px; margin:0 auto;}
+         #showList li{width:100%; height:545px; margin-bottom:20px; line-height:545px; text-align:center; background-repeat:no-repeat; background-position:center center;}
+         /*백그라운드 이미지 개별작업*/
+         #showList .show0{background-image:url("../img/show/fumirium.jpg");}
+         #showList .show1{background-image:url("../img/show/ton.jpg");}
+         #showList .show2{background-image:url("../img/show/sika.jpg");}
+         #showList .show3{background-image:url("../img/show/carl.jpg");}
+
+         #showList a{display:block; width:100%; height:100%; font-size:20px; color:#fff; transition:all 0.5s linear 0.2s;}
+         #showList a:hover, #showList a:focus{background-color:rgba(255,255,255,0.5); font-size:24px; color:#333;}
+
+      /*###### footer ######*/
+         #footer{width:100%; height:500px; line-height:500px; text-align:center; font-size:50px; background-color:#333; color:#fff;}
+
+      /*#### 미디어 쿼리 ####*/
+
+      /*##### 스마트폰 세로 버전 ####*/
+
+         @media all and (min-width:320px) and (max-width:480px){
+            /*###### header ######*/
+            #header h1{width:300px; height:50px; line-height:50px;}
+
+            /*titleArea*/
+            #titleArea{width:100%; height:50px; padding-top:0;}
+            #titleArea h2{width:300px; font-size:35px; text-align:center;}
+
+            /*showList*/
+            #showList ul{width:300px; margin:0 auto;}
+            #showList li{width:100%; height:210px; padding-top:190px; margin-bottom:15px; line-height:30px;}
+            #showList a:hover, #showList a:focus{background-color:rgba(255,255,255,0); font-size:20px; color:#fff;}
+
+            /*###### footer ######*/
+            #footer{height:300px; line-height:300px; font-size:30px;}
+
+         }
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <header id="header">
+         <h1>
+            header
+         </h1>
+      </header>
+      <div id="container">
+         <div id="titleArea">
+            <h2>SHOW</h2>
+         </div>
+         <div id="showList">
+            <ul>
+               <li class="show0">
+                  <a href="sub/fumirium.html" title="fumirium">
+                     FUMIRIUM
+                  </a>
+               </li>
+               <li class="show1">
+                  <a href="#" title="ton">
+                     HAND-CRAFTED FOR GENERATIONS
+                  </a>
+               </li>
+               <li class="show2">
+                  <a href="#" title="sika_design">
+                     A PROUD TRADTION OF CRAFTMANSHIP SINCE 1942
+                  </a>
+               </li>
+               <li class="show3">
+                  <a href="#" title="carl_hansen_son">
+                     덴마크 오리지널 디자인의 성숙한 멋
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <footer id="footer">
+         footer
+      </footer>
+   </div>
+ </body>
+</html>
