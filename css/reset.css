@@ -1,0 +1,24 @@
+@charset "utf-8"
+
+/* campton */
+@font-face {font-family: "campton700"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/campton/Campton-BoldDEMO.woff");}
+@font-face {font-family: "campton100"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/campton/Campton-LightDEMO.woff");}
+
+/*에스코어 드림체*/
+@font-face {font-family: "sCore100"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-1Thin.woff");}
+@font-face {font-family: "sCore200"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-2ExtraLight.woff");}
+@font-face {font-family: "sCore300"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-3Light.woff");}
+@font-face {font-family: "sCore400"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-4Regular.woff");}
+@font-face {font-family: "sCore500"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-5Medium.woff");}
+@font-face {font-family: "sCore600"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-6Bold.woff");}
+@font-face {font-family: "sCore700"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-7ExtraBold.woff");}
+@font-face {font-family: "sCore800"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-8Heavy.woff");}
+@font-face {font-family: "sCore900"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-9Black.woff");}
+
+/*########### 초기화 ##########*/
+*{margin:0; padding:0;}
+body {margin:0; padding:0;}
+li{list-style-type:none;}
+a:link,a:visited {text-decoration: none; color: #333;}
+.inner{max-width:1280px; margin: 0 auto;}
+.clear:after {content:''; display: block;clear: both;}
