@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <title>CASA LIVING 까사리빙</title>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+   <link rel="stylesheet" href="css/reset.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <!-- <script src="js/jquery-ui.min.js"></script> -->
+
+   <style>
+      /*에스코어 드림체*/
+      @font-face {font-family: "sCore100"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-1Thin.woff");}
+      @font-face {font-family: "sCore200"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-2ExtraLight.woff");}
+      @font-face {font-family: "sCore300"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-3Light.woff");}
+      @font-face {font-family: "sCore400"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-4Regular.woff");}
+      @font-face {font-family: "sCore500"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-5Medium.woff");}
+      @font-face {font-family: "sCore600"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-6Bold.woff");}
+      @font-face {font-family: "sCore700"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-7ExtraBold.woff");}
+      @font-face {font-family: "sCore800"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-8Heavy.woff");}
+      @font-face {font-family: "sCore900"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-9Black.woff");}
+      /*######## wrap ########*/
+      #wrap{width:100%; font-family:"sCore400";}
+
+      /*##### topBarArea ####*/
+      #topBarArea{width:100%; padding:10px 0; text-align:center;  background-color:#313131; display:none;}
+      #topBar .img {width:272px;}
+      #topBar .img img{width:100%;}
+
+      /*######## header ########*/
+      #headerWrap{width:100%; position:fixed; left:0; top:0; z-index:999; background-color:#fff; opacity:.8;}
+      #header{width:100%; position: relative;}
+      #headerWrap .header_inner{width: 1600px; height: 100%; margin: 0 auto; z-index:9999;}
+      
+      /*## 모바일 네비 영역 ##*/
+      #mNavArea{display:none;}
+
+      /*##### header / top_area ####### */
+      #header .top_area{width:100%; padding:20px 0; background-color: #fff;}
+
+      /*로고영역*/
+      #header .logo{width:7%; float:left;}
+
+      #header .logo a img{width:100%;}
+
+      /*큰 메뉴 영역*/
+      #header .content{width:68%; padding-top:23px; float:left;}
+      #header .content ul{width:100%; font-size:20px;}
+      #header .content li{margin-left:7%; display:inline-block; position:relative; font-family:"sCore700";}
+      #header .content li:hover:after{width:100%;}
+      #header .content li:after{
+         content:"";
+         display:inline-block;
+         width:0;
+         height:20%;
+         background-color:#ffc3a7;
+         position:absolute;
+         left: 0;
+         top:100%;
+         transform: translatey(-50%);
+         transition:all 0.3s linear;
+      }
+
+
+      /*아이콘 영역*/
+      #header .info_menu {
+         width: 25%;
+         padding-top: 10px;
+         float: left;
+      }
+
+      #header .info_menu li {
+         width: 25px;
+         margin-left: 30px;
+         float: left;
+      }
+
+      #header .info_menu a img {
+         width: 100%;
+      }
+
+      /*##### header / bottom_area ####### */
+      #header .bottom_area {
+         width: 100%;
+         height: 50px;
+         line-height: 50px;
+         background-color:#fff;
+         border-top: 1px solid #f5f5f5;
+         box-sizing:border-box;
+         position: absolute;
+         left: 0;
+         bottom: 0;
+         z-index:-2;
+         transition:.5s ease all;
+         opacity:0;
+      }
+
+      #header .bottom_area.active{
+         bottom:-50px;
+         opacity:0.8;
+      }
+
+      /*nav 영역*/
+      #gnb{width:1250px; font-size:14px; float:left;}
+
+      #gnb ul{float:left;}
+
+      #gnb li a:hover, #gnb li a:focus{text-decoration:underline;}
+
+      #gnb .cate {
+         border-right: 1px solid #ccc;
+         padding-right: 15px;
+      }
+
+      #gnb .sub_cate {
+         padding-left: 50px;
+      }
+
+      #gnb li {
+         display: inline;
+         padding-right: 40px;
+      }
+
+      /*검색창 영역*/
+      #header form {
+         display:none; 
+         width: 350px;
+         height: 20px;
+         text-align: right;
+         float: left;
+      }
+
+      #header fieldset {
+         border: none;
+      }
+
+      #header legend {
+         display: none;
+      }
+
+      #header form #search {
+         width: 180px;
+         height: 28px;
+         border: 1px solid #adadad;
+         color: #ccc;
+         text-indent: 15px;
+      }
+
+      #header form #btn{width:55px; height:30px; border:1px solid #ccc; vertical-align:middle;}
+
+
+
+      /*미디어 쿼리 영역*/
+      /*###### pc해상도 ######*/
+      @media all and (min-width:1025px){
+
+      }
+
+      /*###### 태블릿 pc해상도 ######*/
+      @media all and (min-width:768px) and (max-width:1024px){
+
+         /*초기화*/
+         .inner{width:768px; margin:0 auto;}
+
+         /*######## header ########*/
+         #headerWrap .header_inner{width:768px;}
+
+         /*로고영역*/
+         #header .logo{width:10%;}
+
+         /*큰 메뉴 영역*/
+         #header .content{width:65%;}
+         #header .content ul{font-size:17px;}
+
+         /*아이콘 영역*/
+         #header .info_menu{width:25%;}
+         #header .info_menu li{width:20px;}
+
+         /*##### header / bottom_area ####### */
+         #header .bottom_area{height:40px; line-height:40px;}
+         #header .bottom_area .active{bottom:-40px;}
+         #gnb{width:768px; font-size:14px;}
+
+         /*visual영역*/
+         #visual{width:100%; height:60vw; position:relative; overflow: hidden;}
+         #visual .bg_text{display:none;}
+
+         #visual .img_area{width:100%; height:100%; position:absolute; left:0; top:0;}
+         #visual .img_area ul{width:100%; height:100%; box-shadow:20px 10px 10px rgba(0, 0, 0, 0.2);}
+
+         #visual .img a{display:block;}
+         #visual .img a img {width:100%;}
+         #visual .text_box{width:500px; height:130px; padding:30px 50px; position: absolute; right: 150px; bottom: -230px; color: #fff; background-color: rgba(0, 0, 0, 0.5); transition: bottom 0.8s linear 0.2s;}
+         #visual .text_box .tag{font-size:18px; font-family:"sCore100";}
+         #visual .text_box .title{height:90px; line-height:70px; font-size:50px; font-family:"sCore400";}
+         #visual .text_box .more{font-family:"sCore100";}
+         #visual .text_box .more a{
+            padding: 5px 10px;
+            border: 1px solid #fff;
+            color: #fff;
+            font-size: 17px;
+         }
+
+
+         #brandGrid{width:230px;}
+         #brandGrid li{height:342px;}
+         #prodGrid0{width:170px; padding:0 10px 0 5px;}
+         #prodRoll0{width:353px;}
+         #magazine{width:353px;}
+
+
+         /*####### footer #######*/
+         #footer .menu{width:900px;}
+         #footer .bottomW{width:100%; padding-top:50px;}
+         #footer .bottom{width:1000px; height:684px; line-height:25px; font-size:15px;}
+         #footer .logo{padding-right:50px;}
+         #footer .info{padding-right:50px;}
+
+      }
+
+      /*###### 스마트폰 가로버전 해상도 ######*/
+      @media all and (min-width:481px) and (max-width:767px){
+         
+      }
+
+      /*####### 스마트폰 세로버전 ########*/
+      @media all and (min-width:320px) and (max-width:480px){
+
+      }
+
+
+   </style>
+   <script>
+
+      //제이쿼리 영역
+      $(document).ready(function(){
+
+         // window
+         $headerBottom = $('#header .bottom_area');
+         $(window).scroll(function(){
+            $user = $(this).scrollTop();
+            console.log($user);
+            if($user > 0){
+               $headerBottom.addClass('active');
+            }else{
+               $headerBottom.removeClass('active');
+            }
+            
+         });
+
+         var cookieCheck = document.cookie;  //쿠키값 가져오기
+         //console.log(cookieCheck);
+         var cookies = cookieCheck.split('; '); //쿠키값 짤라서 배열로 나눔, 0번째 배열값 불러옴 
+         //console.log(cookies);
+         var userName = "";
+         
+         //쿠키가 여러개인 경우 맨 앞에 있는 쿠키를 불러와서 이름이 잘못 출력 될수 있음
+         //1.쿠키값을 for문을 돌림
+         for(i = 0; i < cookies.length; i++) {
+            //2.login_controll.php에서 setcookie($userName, + 3600); 즉 값이, 뒤에 4자리가 3600인걸 찾아서
+            if(cookies[i].slice(-4) == "3600") {
+               userName = cookies[i].slice(0, cookies[i].length - 5); //3. 이찾은걸 ex) 황하늘=3600 을 뒤에서 5자리를 짤라 앞에 꺼만 갔다 씀, 변수 userName = "황하늘"; 이 됨
+            }
+
+         }
+         
+         if(userName !== "") { //로그인 된거 : 
+            $("#loginOk").hide();      
+            $("#loginNo").show();
+            let loadName = "<div style='float: right'>" + userName + "님, 환영합니다! <div>"; //문자열에 userName 사이에 넣어줌
+            $(".content").prepend(loadName);    // content 태그 뒤에 위에 껄 넣어줌
+         }else { //로그인 안된거
+            $("#loginOk").show();
+            $("#loginNo").hide();
+         }
+      });
+   </script>
+</head>
+
+<body>
+   <div id="wrap">
+      <!--topBar 영역-->
+      <div id="topBarArea">
+         <p class="img">
+            <a href="#" title="신규이벤트">
+               <img src="img/top0.jpg" alt="이벤트0" />
+            </a>
+         </p>
+      </div>
+      <!--header 전체 사용 영역-->
+      <div id="headerWrap">
+         <div id="header">
+            <div class="header inner">
+               <div class="top_area clear">
+                  <div class="logo">
+                     <a href="http://hyooo11.dothome.co.kr/casaliving_pp" title="까사리빙">
+                        <img src="http://hyooo11.dothome.co.kr/casaliving_pp/resource/img/logo.gif" alt="까사리빙로고" />
+                     </a>
+                  </div>
+                  <div class="content">
+                     <ul>
+                        <li><a href="http://hyooo11.dothome.co.kr/casaliving_pp/magazine/magazine.html" title="MAGAZINE">MAGAZINE</a></li>
+                        <li><a href="http://hyooo11.dothome.co.kr/casaliving_pp/brand/brand.html" title="BRANDS">BRANDS</a></li>
+                        <li><a href="http://hyooo11.dothome.co.kr/casaliving_pp/show/show.html" title="SHOW">SHOW</a></li>
+                        <li><a href="#" title="EVENT">EVENT</a></li>
+                     </ul>
+                  </div>
+                  <div class="info_menu">
+                     <ul>
+                        <li>
+                           <a href="http://hyooo11.dothome.co.kr/casaliving_pp/php/login.php" title="로그인">
+                              <img src="http://hyooo11.dothome.co.kr/casaliving_pp/resource/img/icon0.png" alt="로그인" />
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://hyooo11.dothome.co.kr/casaliving_pp/php/logout.php" title="로그아웃">
+                              <img src="http://hyooo11.dothome.co.kr/casaliving_pp/resource/img/icon3_logout.png" alt="로그아웃" />
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#" title="장바구니">
+                              <img src="http://hyooo11.dothome.co.kr/casaliving_pp/resource/img/icon1.png" alt="장바구니" />
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#" title="고객센터">
+                              <img src="http://hyooo11.dothome.co.kr/casaliving_pp/resource/img/icon2.png" alt="고객센터" />
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="bottom_area clear">
+
+               <div class="inner">
+                  <nav id="gnb">
+                     <ul class="cate">
+                        <li>
+                           <a href="#" title="FURNITURE">FURNITURE</span></a>
+                        </li>
+                        <li>
+                           <a href="#" title="HOMEWARE">HOMEWARE</a>
+                        </li>
+                        <li>
+                           <a href="#" title="LIGHTING">LIGHTING</a>
+                        </li>
+                        <li>
+                           <a href="#" title="LIFE">LIFE</a>
+                        </li>
+                     </ul>
+                     <ul class="sub_cate">
+                        <li>
+                           <a href="#" title="BEST">BEST</a>
+                        </li>
+                        <li>
+                           <a href="#" title="NEW">NEW</a>
+                        </li>
+                        <li>
+                           <a href="#" title="LIKE IT">LIKE IT</a>
+                        </li>
+                     </ul>
+                  </nav>
+                  <form action="#" method="post">
+                     <fieldset>
+                        <legend>검색</legend>
+                        <input id="search" type="text" name="search" title="검색" value="search" /><input id="btn"
+                           type="submit" value="검색" />
+                     </fieldset>
+                  </form>
+               </div>
+               
+            </div>
+         </div>
+         <!-- 모바일 네비 영역 -->
+         <div id="mNavArea">
+            <p class="btn">
+               <a href="#" title="모바일 햄버거 버튼">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+               </a>
+            </p>
+            <div class="m_menu">
+               <div class="cate">
+                  <ul>
+                     <li>
+                        <a href="#" title="FURNITURE">FURNITURE</a>
+                     </li>
+                     <li>
+                        <a href="#" title="HOMEWARE">HOMEWARE</a>
+                     </li>
+                     <li>
+                        <a href="#" title="LIGHTING">LIGHTING</a>
+                     </li>
+                     <li>
+                        <a href="#" title="LIFE">LIFE</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="content">
+                  <ul>
+                     <li><a href="http://hyooo11.dothome.co.kr/casaliving_pp//magazine/magazine.html" title="MAGAZINE">MAGAZINE</a></li>
+                     <li><a href="http://hyooo11.dothome.co.kr/casaliving_pp//brand/brand.html" title="BRANDS">BRANDS</a></li>
+                     <li><a href="http://hyooo11.dothome.co.kr/casaliving_pp//show/show.html" title="SHOW">SHOW</a></li>
+                     <li><a href="#" title="EVENT">EVENT</a></li>
+                  </ul>
+               </div>
+               <div class="sub_cate">
+                  <ul>
+                     <li>
+                        <a href="#" title="BEST">BEST</a>
+                     </li>
+                     <li>
+                        <a href="#" title="NEW">NEW</a>
+                     </li>
+                     <li>
+                        <a href="#" title="LIKE IT">LIKE IT</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>
