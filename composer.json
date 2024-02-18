@@ -1,0 +1,15 @@
+{
+    "name": "hyojinshin/casa-living",
+    "autoload": {
+        "psr-4": {
+            "Hyojinshin\\CasaLiving\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hyooo11",
+            "email": "tlsgywls1107@naver.com"
+        }
+    ],
+    "require": {}
+}
