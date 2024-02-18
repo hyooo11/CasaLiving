@@ -1,328 +1,632 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-   <title>CASA LIVING 까사리빙</title>
-   <meta charset="utf-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link
+  <head>
+    <title>CASA LIVING 까사리빙</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
       href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-   <!-- <script src="js/jquery-ui.min.js"></script> -->
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="js/jquery-ui.min.js"></script> -->
 
-   <style>
-      
+    <style>
       /*에스코어 드림체*/
-      @font-face {font-family: "sCore100"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-1Thin.woff");}
-      @font-face {font-family: "sCore200"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-2ExtraLight.woff");}
-      @font-face {font-family: "sCore300"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-3Light.woff");}
-      @font-face {font-family: "sCore400"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-4Regular.woff");}
-      @font-face {font-family: "sCore500"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-5Medium.woff");}
-      @font-face {font-family: "sCore600"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-6Bold.woff");}
-      @font-face {font-family: "sCore700"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-7ExtraBold.woff");}
-      @font-face {font-family: "sCore800"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-8Heavy.woff");}
-      @font-face {font-family: "sCore900"; src: url("http://hyooo11.dothome.co.kr/casaliving_pp/font/scoreDream/S-CoreDream-9Black.woff");}
+      @font-face {
+        font-family: "sCore100";
+        src: url("/font/scoreDream/S-CoreDream-1Thin.woff");
+      }
+      @font-face {
+        font-family: "sCore200";
+        src: url("/font/scoreDream/S-CoreDream-2ExtraLight.woff");
+      }
+      @font-face {
+        font-family: "sCore300";
+        src: url("/font/scoreDream/S-CoreDream-3Light.woff");
+      }
+      @font-face {
+        font-family: "sCore400";
+        src: url("/font/scoreDream/S-CoreDream-4Regular.woff");
+      }
+      @font-face {
+        font-family: "sCore500";
+        src: url("/font/scoreDream/S-CoreDream-5Medium.woff");
+      }
+      @font-face {
+        font-family: "sCore600";
+        src: url("/font/scoreDream/S-CoreDream-6Bold.woff");
+      }
+      @font-face {
+        font-family: "sCore700";
+        src: url("/font/scoreDream/S-CoreDream-7ExtraBold.woff");
+      }
+      @font-face {
+        font-family: "sCore800";
+        src: url("/font/scoreDream/S-CoreDream-8Heavy.woff");
+      }
+      @font-face {
+        font-family: "sCore900";
+        src: url("/font/scoreDream/S-CoreDream-9Black.woff");
+      }
 
       /*########### 초기화 ##########*/
-      *{margin:0; padding:0;}
-      body {margin:0; padding:0;}
-      li{list-style-type:none;}
-      a:link,a:visited {text-decoration: none; color: #333;}
-      .inner{max-width:1280px; margin: 0 auto;}
-      .clear:after {content:''; display: block;clear: both;}
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style-type: none;
+      }
+      a:link,
+      a:visited {
+        text-decoration: none;
+        color: #333;
+      }
+      .inner {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .clear:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
 
       /*######## wrap ########*/
-      #wrap{width:100%; font-family:"sCore400";}
+      #wrap {
+        width: 100%;
+        font-family: "sCore400";
+      }
 
       /*####### footer #######*/
-      #footer{width:100%;}
-      #footer .top_menu{width:100%; border-top:2px solid #ccc; border-bottom: 2px solid #ccc;}
+      #footer {
+        width: 100%;
+      }
+      #footer .top_menu {
+        width: 100%;
+        border-top: 2px solid #ccc;
+        border-bottom: 2px solid #ccc;
+      }
 
-      #footer .menu{width:1200px; margin:0 auto;}
-      #footer .menu li{display:inline; height:40px; line-height:40px; padding-right:40px;
-         font-size:15px;
+      #footer .menu {
+        width: 1200px;
+        margin: 0 auto;
+      }
+      #footer .menu li {
+        display: inline;
+        height: 40px;
+        line-height: 40px;
+        padding-right: 40px;
+        font-size: 15px;
       }
 
       /*모바일 푸터 아코디언 영역*/
-      #footer .m_menu{display:none;}
-      #footer .bottomW{width:100%; padding-top:80px;}
-      #footer .bottom{width:1200px; height:320px; line-height:25px; font-size:15px; color:#777; margin:0 auto;}
-      #footer .logo{padding-right:200px; float:left;}
-      #footer .img{width:100px;}
-      #footer .img img{width:100%;}
-      #footer .info{padding-right:200px; float:left;}
-      #footer .info h4{height:50px; font-size:18px;}
-      #footer .info .b_info{padding-top:10px;}
-      #footer .info .b_info a{padding:3px 15px; border:1px solid #777; color:#777; font-size:15px;}
-      #footer .service{float:left;}
-      #footer .sns{height:50px;}
-      #footer .sns li{width:25px; padding-right:20px; float:left;}
+      #footer .m_menu {
+        display: none;
+      }
+      #footer .bottomW {
+        width: 100%;
+        padding-top: 80px;
+      }
+      #footer .bottom {
+        width: 1200px;
+        height: 320px;
+        line-height: 25px;
+        font-size: 15px;
+        color: #777;
+        margin: 0 auto;
+      }
+      #footer .logo {
+        padding-right: 200px;
+        float: left;
+      }
+      #footer .img {
+        width: 100px;
+      }
+      #footer .img img {
+        width: 100%;
+      }
+      #footer .info {
+        padding-right: 200px;
+        float: left;
+      }
+      #footer .info h4 {
+        height: 50px;
+        font-size: 18px;
+      }
+      #footer .info .b_info {
+        padding-top: 10px;
+      }
+      #footer .info .b_info a {
+        padding: 3px 15px;
+        border: 1px solid #777;
+        color: #777;
+        font-size: 15px;
+      }
+      #footer .service {
+        float: left;
+      }
+      #footer .sns {
+        height: 50px;
+      }
+      #footer .sns li {
+        width: 25px;
+        padding-right: 20px;
+        float: left;
+      }
 
-      #footer .sns li a img{width:100%;}
+      #footer .sns li a img {
+        width: 100%;
+      }
 
-      #footer .center{width:300px; padding:15px 30px; border-radius:10px; background-color:#f7f7f7;}
+      #footer .center {
+        width: 300px;
+        padding: 15px 30px;
+        border-radius: 10px;
+        background-color: #f7f7f7;
+      }
 
-      #footer .center strong{font-size:18px;}
+      #footer .center strong {
+        font-size: 18px;
+      }
 
-      #footer .center em{line-height:60px; font-style:normal; font-size:40px; font-weight:700;}
+      #footer .center em {
+        line-height: 60px;
+        font-style: normal;
+        font-size: 40px;
+        font-weight: 700;
+      }
 
-      #footer .center p{width:100%;}
-      #footer .center span{padding-right:10px;}
-      #footer .center b{font-weight:700;}
+      #footer .center p {
+        width: 100%;
+      }
+      #footer .center span {
+        padding-right: 10px;
+      }
+      #footer .center b {
+        font-weight: 700;
+      }
 
       /*############# headline 임시보관소##################*/
-      h2{position: absolute; left:-9999px;width:1px; height:1px; font-size:1px; line-height:0; overflow:hidden;}
-
+      h2 {
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        font-size: 1px;
+        line-height: 0;
+        overflow: hidden;
+      }
 
       /*미디어 쿼리 영역*/
       /*###### pc해상도 ######*/
-      @media all and (min-width:1025px){
-
+      @media all and (min-width: 1025px) {
       }
 
       /*###### 태블릿 pc해상도 ######*/
-      @media all and (min-width:768px) and (max-width:1024px){
+      @media all and (min-width: 768px) and (max-width: 1024px) {
+        /*초기화*/
+        .inner {
+          width: 768px;
+          margin: 0 auto;
+        }
 
-         /*초기화*/
-         .inner{width:768px; margin:0 auto;}
+        /*######## header ########*/
+        #headerWrap .header_inner {
+          width: 768px;
+        }
 
-         /*######## header ########*/
-         #headerWrap .header_inner{width:768px;}
+        /*로고영역*/
+        #header .logo {
+          width: 10%;
+        }
 
-         /*로고영역*/
-         #header .logo{width:10%;}
+        /*큰 메뉴 영역*/
+        #header .content {
+          width: 65%;
+        }
+        #header .content ul {
+          font-size: 17px;
+        }
 
-         /*큰 메뉴 영역*/
-         #header .content{width:65%;}
-         #header .content ul{font-size:17px;}
+        /*아이콘 영역*/
+        #header .info_menu {
+          width: 25%;
+        }
+        #header .info_menu li {
+          width: 20px;
+        }
 
-         /*아이콘 영역*/
-         #header .info_menu{width:25%;}
-         #header .info_menu li{width:20px;}
+        /*##### header / bottom_area ####### */
+        #header .bottom_area {
+          height: 40px;
+          line-height: 40px;
+        }
+        #header .bottom_area .active {
+          bottom: -40px;
+        }
+        #gnb {
+          width: 768px;
+          font-size: 14px;
+        }
 
-         /*##### header / bottom_area ####### */
-         #header .bottom_area{height:40px; line-height:40px;}
-         #header .bottom_area .active{bottom:-40px;}
-         #gnb{width:768px; font-size:14px;}
+        /*visual영역*/
+        #visual {
+          width: 100%;
+          height: 60vw;
+          position: relative;
+          overflow: hidden;
+        }
+        #visual .bg_text {
+          display: none;
+        }
 
-         /*visual영역*/
-         #visual{width:100%; height:60vw; position:relative; overflow: hidden;}
-         #visual .bg_text{display:none;}
+        #visual .img_area {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+        #visual .img_area ul {
+          width: 100%;
+          height: 100%;
+          box-shadow: 20px 10px 10px rgba(0, 0, 0, 0.2);
+        }
 
-         #visual .img_area{width:100%; height:100%; position:absolute; left:0; top:0;}
-         #visual .img_area ul{width:100%; height:100%; box-shadow:20px 10px 10px rgba(0, 0, 0, 0.2);}
+        #visual .img a {
+          display: block;
+        }
+        #visual .img a img {
+          width: 100%;
+        }
+        #visual .text_box {
+          width: 500px;
+          height: 130px;
+          padding: 30px 50px;
+          position: absolute;
+          right: 150px;
+          bottom: -230px;
+          color: #fff;
+          background-color: rgba(0, 0, 0, 0.5);
+          transition: bottom 0.8s linear 0.2s;
+        }
+        #visual .text_box .tag {
+          font-size: 18px;
+          font-family: "sCore100";
+        }
+        #visual .text_box .title {
+          height: 90px;
+          line-height: 70px;
+          font-size: 50px;
+          font-family: "sCore400";
+        }
+        #visual .text_box .more {
+          font-family: "sCore100";
+        }
+        #visual .text_box .more a {
+          padding: 5px 10px;
+          border: 1px solid #fff;
+          color: #fff;
+          font-size: 17px;
+        }
 
-         #visual .img a{display:block;}
-         #visual .img a img {width:100%;}
-         #visual .text_box{width:500px; height:130px; padding:30px 50px; position: absolute; right: 150px; bottom: -230px; color: #fff; background-color: rgba(0, 0, 0, 0.5); transition: bottom 0.8s linear 0.2s;}
-         #visual .text_box .tag{font-size:18px; font-family:"sCore100";}
-         #visual .text_box .title{height:90px; line-height:70px; font-size:50px; font-family:"sCore400";}
-         #visual .text_box .more{font-family:"sCore100";}
-         #visual .text_box .more a{
-            padding: 5px 10px;
-            border: 1px solid #fff;
-            color: #fff;
-            font-size: 17px;
-         }
+        #brandGrid {
+          width: 230px;
+        }
+        #brandGrid li {
+          height: 342px;
+        }
+        #prodGrid0 {
+          width: 170px;
+          padding: 0 10px 0 5px;
+        }
+        #prodRoll0 {
+          width: 353px;
+        }
+        #magazine {
+          width: 353px;
+        }
 
-
-         #brandGrid{width:230px;}
-         #brandGrid li{height:342px;}
-         #prodGrid0{width:170px; padding:0 10px 0 5px;}
-         #prodRoll0{width:353px;}
-         #magazine{width:353px;}
-
-
-         /*####### footer #######*/
-         #footer .menu{width:900px;}
-         #footer .bottomW{width:100%; padding-top:50px;}
-         #footer .bottom{width:1000px; height:684px; line-height:25px; font-size:15px;}
-         #footer .logo{padding-right:50px;}
-         #footer .info{padding-right:50px;}
-
+        /*####### footer #######*/
+        #footer .menu {
+          width: 900px;
+        }
+        #footer .bottomW {
+          width: 100%;
+          padding-top: 50px;
+        }
+        #footer .bottom {
+          width: 1000px;
+          height: 684px;
+          line-height: 25px;
+          font-size: 15px;
+        }
+        #footer .logo {
+          padding-right: 50px;
+        }
+        #footer .info {
+          padding-right: 50px;
+        }
       }
 
       /*###### 스마트폰 가로버전 해상도 ######*/
-      @media all and (min-width:481px) and (max-width:767px){
-         footer .top_menu{display:none;}
-         #footer .menu{display:none;}
-         #footer .m_menu{display:block;}
-         #footer .m_menu{width:100%;}
-         #footer .m_menu li{display:block; line-height:30px; padding-right:0; border-bottom:1px solid #ccc; font-size:13px; text-align:center;}
-         #footer .m_menu li:first-child{padding-top:20px;}
-         #footer .m_menu li .text{padding:10px; line-height:20px; font-size:11px; color:#555; background-color:#efefef;}
-         #footer .m_menu li .text a{color:#ff5000;}
+      @media all and (min-width: 481px) and (max-width: 767px) {
+        footer .top_menu {
+          display: none;
+        }
+        #footer .menu {
+          display: none;
+        }
+        #footer .m_menu {
+          display: block;
+        }
+        #footer .m_menu {
+          width: 100%;
+        }
+        #footer .m_menu li {
+          display: block;
+          line-height: 30px;
+          padding-right: 0;
+          border-bottom: 1px solid #ccc;
+          font-size: 13px;
+          text-align: center;
+        }
+        #footer .m_menu li:first-child {
+          padding-top: 20px;
+        }
+        #footer .m_menu li .text {
+          padding: 10px;
+          line-height: 20px;
+          font-size: 11px;
+          color: #555;
+          background-color: #efefef;
+        }
+        #footer .m_menu li .text a {
+          color: #ff5000;
+        }
       }
 
       /*####### 스마트폰 세로버전 ########*/
-      @media all and (min-width:320px) and (max-width:480px){
-         /*####### footer #######*/
-         #footer .top_menu{display:none;}
-         #footer .menu{display:none;}
-         #footer .m_menu{display:block;}
-         #footer .m_menu{width:100%;}
-         #footer .m_menu li{display:block; line-height:30px; padding-right:0; border-bottom:1px solid #ccc; font-size:13px; text-align:center;}
-         #footer .m_menu li:first-child{padding-top:20px;}
-         #footer .m_menu li .text{padding:10px; line-height:20px; font-size:11px; color:#555; background-color:#efefef;}
-         #footer .m_menu li .text a{color:#ff5000;}
+      @media all and (min-width: 320px) and (max-width: 480px) {
+        /*####### footer #######*/
+        #footer .top_menu {
+          display: none;
+        }
+        #footer .menu {
+          display: none;
+        }
+        #footer .m_menu {
+          display: block;
+        }
+        #footer .m_menu {
+          width: 100%;
+        }
+        #footer .m_menu li {
+          display: block;
+          line-height: 30px;
+          padding-right: 0;
+          border-bottom: 1px solid #ccc;
+          font-size: 13px;
+          text-align: center;
+        }
+        #footer .m_menu li:first-child {
+          padding-top: 20px;
+        }
+        #footer .m_menu li .text {
+          padding: 10px;
+          line-height: 20px;
+          font-size: 11px;
+          color: #555;
+          background-color: #efefef;
+        }
+        #footer .m_menu li .text a {
+          color: #ff5000;
+        }
 
-         #footer .bottomW{padding-top:20px;}
-         #footer .bottom{width:100%; height:0; line-height:25px; font-size:15px; color:#777; margin:0 auto;}
-         #footer .logo{display:none;}
-         #footer .img{width:100px;}
-         #footer .img img{width:100%;} 
-         #footer .info{display:none;}
-         
-         #footer .service{float:none; text-align:center; padding-top:30px;}
-         #footer .sns{display:none;}
-         #footer .sns li{display:inline-block; width:25px; padding-right:10px;  float:none;}
-         #footer .sns li a img{width:100%;}
+        #footer .bottomW {
+          padding-top: 20px;
+        }
+        #footer .bottom {
+          width: 100%;
+          height: 0;
+          line-height: 25px;
+          font-size: 15px;
+          color: #777;
+          margin: 0 auto;
+        }
+        #footer .logo {
+          display: none;
+        }
+        #footer .img {
+          width: 100px;
+        }
+        #footer .img img {
+          width: 100%;
+        }
+        #footer .info {
+          display: none;
+        }
 
-         #footer .center{width:100%; padding:0;}
+        #footer .service {
+          float: none;
+          text-align: center;
+          padding-top: 30px;
+        }
+        #footer .sns {
+          display: none;
+        }
+        #footer .sns li {
+          display: inline-block;
+          width: 25px;
+          padding-right: 10px;
+          float: none;
+        }
+        #footer .sns li a img {
+          width: 100%;
+        }
+
+        #footer .center {
+          width: 100%;
+          padding: 0;
+        }
       }
-
-
-   </style>
-   <script>
+    </style>
+    <script>
       //topBarArea 스크롤 내리면 들어가기
 
       //제이쿼리 영역
-      $(document).ready(function(){
-
-         /*
+      $(document).ready(function () {
+        /*
             대상: #footer .m_menu li .title
             이벤트 : 클릭
             이벤트 핸들러 : #footer .m_menu li .text
          */
-         $("#footer .m_menu li .text").css({ "display": "none" });
+        $("#footer .m_menu li .text").css({ display: "none" });
 
-         $("#footer .m_menu li .title").click(function () {
-            $("#footer .m_menu li .text").slideUp(500, "swing");
-            $(this).next().slideDown(500, "swing");
-         });
-
-
+        $("#footer .m_menu li .title").click(function () {
+          $("#footer .m_menu li .text").slideUp(500, "swing");
+          $(this).next().slideDown(500, "swing");
+        });
       });
-   </script>
-</head>
+    </script>
+  </head>
 
-<body>
-   <div id="wrap">
+  <body>
+    <div id="wrap">
       <footer id="footer">
-         <div class="top_menu">
-            <ul class="menu">
-               <li>
-                  <a href="#" title="까사리빙_소개">까사리빙 소개</a>
-               </li>
-               <li>
-                  <a href="#" title="개인정보취급방침">개인정보취급방침</a>
-               </li>
-               <li>
-                  <a href="#" title="이용약관">이용약관</a>
-               </li>
-               <li>
-                  <a href="#" title="입점문의">입점문의</a>
-               </li>
-            </ul>
-         </div>
-         <div class="m_menu">
-            <ul>
-               <li>
-                  <p class="title">
-                     <a href="#" title="까사리빙_소개">까사리빙 소개</a>
-                  </p>
-                  <p class="text">
-                     (주)시공사<br />
-                     대표자 : 윤호권, 박현용<br />
-                     개인정보책임자 : 이시민 cs@casa.co.kr<br />
-                     고객센터 1644-4676<br />
-                     서울특별시 성동구 성수동1가 656-1748<br />
-                     사업자번호 : 214-81-33375<br />
-                     통신판매업신고 제2001-서울서초-00591호
-                  </p>
-               </li>
-               <li>
-                  <p class="title">
-                     <a href="#" title="개인정보취급방침">개인정보취급방침</a>
-                  </p>
-                  <p class="text">
-                     까사리빙은 이용자의 정보를 소중하게 생각하며,<br />
-                     [정보통신망 이용 촉진 및 정보보호 등에 관한 법률][개인정보보호법][통신비밀보호법]등 관련법규를 준수하기 위하여<br />
-                     <a href="#" title="개인정보 취급방침">[개인정보 취급방침]</a>을 제정하고 이를 준수하고 있습니다.
-                  </p>
-               </li>
-               <li>
-                  <p class="title">
-                     <a href="#" title="이용약관">이용약관</a>
-                  </p>
-                  <p class="text">
-                     까사리빙 <a href="#" title="이용약관">이용약관</a> 보러가기
-                  </p>
-               </li>
-               <li>
-                  <p class="title">
-                     <a href="#" title="입점문의">입점문의</a>
-                  </p>
-                  <p class="text">
-                     브랜드 <a href="#" title="입점문의">입점문의</a> 자세히 보기
-                  </p>
-               </li>
-            </ul>
-         </div>
+        <div class="top_menu">
+          <ul class="menu">
+            <li>
+              <a href="#" title="까사리빙_소개">까사리빙 소개</a>
+            </li>
+            <li>
+              <a href="#" title="개인정보취급방침">개인정보취급방침</a>
+            </li>
+            <li>
+              <a href="#" title="이용약관">이용약관</a>
+            </li>
+            <li>
+              <a href="#" title="입점문의">입점문의</a>
+            </li>
+          </ul>
+        </div>
+        <div class="m_menu">
+          <ul>
+            <li>
+              <p class="title">
+                <a href="#" title="까사리빙_소개">까사리빙 소개</a>
+              </p>
+              <p class="text">
+                (주)시공사<br />
+                대표자 : 윤호권, 박현용<br />
+                개인정보책임자 : 이시민 cs@casa.co.kr<br />
+                고객센터 1644-4676<br />
+                서울특별시 성동구 성수동1가 656-1748<br />
+                사업자번호 : 214-81-33375<br />
+                통신판매업신고 제2001-서울서초-00591호
+              </p>
+            </li>
+            <li>
+              <p class="title">
+                <a href="#" title="개인정보취급방침">개인정보취급방침</a>
+              </p>
+              <p class="text">
+                까사리빙은 이용자의 정보를 소중하게 생각하며,<br />
+                [정보통신망 이용 촉진 및 정보보호 등에 관한
+                법률][개인정보보호법][통신비밀보호법]등 관련법규를 준수하기
+                위하여<br />
+                <a href="#" title="개인정보 취급방침">[개인정보 취급방침]</a>을
+                제정하고 이를 준수하고 있습니다.
+              </p>
+            </li>
+            <li>
+              <p class="title">
+                <a href="#" title="이용약관">이용약관</a>
+              </p>
+              <p class="text">
+                까사리빙 <a href="#" title="이용약관">이용약관</a> 보러가기
+              </p>
+            </li>
+            <li>
+              <p class="title">
+                <a href="#" title="입점문의">입점문의</a>
+              </p>
+              <p class="text">
+                브랜드 <a href="#" title="입점문의">입점문의</a> 자세히 보기
+              </p>
+            </li>
+          </ul>
+        </div>
 
-         <div class="bottomW">
-            <div class="bottom">
-               <div class="logo">
-                  <p class="img">
-                     <img src="http://hyooo11.dothome.co.kr/casaliving_pp/resource/img/logo.gif" alt="로고"/>
-                  </p>
-               </div>
-               <div class="info">
-                  <h4>(주)시공사</h4>
-                  <p>대표자 : 윤호권, 박현용</p>
-                  <p>개인정보책임자 : 이시민 cs@casa.co.kr</p>
-                  <p>고객센터 1644-4676</p>
-                  <p>서울특별시 성동구 성수동1가 656-1748</p>
-                  <p>사업자번호 : 214-81-33375</p>
-                  <p>통신판매업신고 제2001-서울서초-00591호</p>
-                  <p class="b_info">
-                     <a href="#" title="">사업자정보확인</a>
-                  </p>
-               </div>
-               <div class="service">
-                  <ul class="sns">
-                     <li>
-                        <a href="#" title="인스타그램 주소">
-                           <img src="http://hyooo11.dothome.co.kr/casaliving_pp/resource/img/btn_footer_sns_instargram.png" alt="인스타그램_버튼" />
-                        </a>
-                     </li>
-                     <li>
-                        <a href="#" title="인스타그램 주소">
-                           <img src="http://hyooo11.dothome.co.kr/casaliving_pp/resource/img/btn_footer_sns_instargram.png" alt="인스타그램_버튼" />
-                        </a>
-                     </li>
-                     <li>
-                        <a href="#" title="인스타그램 주소">
-                           <img src="http://hyooo11.dothome.co.kr/casaliving_pp/resource/img/btn_footer_sns_instargram.png" alt="인스타그램_버튼" />
-                        </a>
-                     </li>
-                  </ul>
-                  <div class="center">
-                     <p><strong>&copy; copyright</strong></p>
-                     <p><em>shin hyo jin</em></p>
-                     <p><span>E-MAIL</span> <b>tlsgywls1107@naver.com</b></p>
-                     <p><span>PHONE</span> <b>010-2835-2732</b></p>
-                     <p><span>WEEKEND/HOLIDAY</span> <b>OFF</b></p>
-                  </div>
-               </div>
+        <div class="bottomW">
+          <div class="bottom">
+            <div class="logo">
+              <p class="img">
+                <img src="/resource/img/logo.gif" alt="로고" />
+              </p>
             </div>
-         </div>
-         <a id="backToTop" href="#">Top</a>
+            <div class="info">
+              <h4>(주)시공사</h4>
+              <p>대표자 : 윤호권, 박현용</p>
+              <p>개인정보책임자 : 이시민 cs@casa.co.kr</p>
+              <p>고객센터 1644-4676</p>
+              <p>서울특별시 성동구 성수동1가 656-1748</p>
+              <p>사업자번호 : 214-81-33375</p>
+              <p>통신판매업신고 제2001-서울서초-00591호</p>
+              <p class="b_info">
+                <a href="#" title="">사업자정보확인</a>
+              </p>
+            </div>
+            <div class="service">
+              <ul class="sns">
+                <li>
+                  <a href="#" title="인스타그램 주소">
+                    <img
+                      src="/resource/img/btn_footer_sns_instargram.png"
+                      alt="인스타그램_버튼"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="인스타그램 주소">
+                    <img
+                      src="/resource/img/btn_footer_sns_instargram.png"
+                      alt="인스타그램_버튼"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="인스타그램 주소">
+                    <img
+                      src="/resource/img/btn_footer_sns_instargram.png"
+                      alt="인스타그램_버튼"
+                    />
+                  </a>
+                </li>
+              </ul>
+              <div class="center">
+                <p><strong>&copy; copyright</strong></p>
+                <p><em>shin hyo jin</em></p>
+                <p><span>E-MAIL</span> <b>tlsgywls1107@naver.com</b></p>
+                <p><span>PHONE</span> <b>010-2835-2732</b></p>
+                <p><span>WEEKEND/HOLIDAY</span> <b>OFF</b></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a id="backToTop" href="#">Top</a>
       </footer>
-   </div>
-</body>
-
+    </div>
+  </body>
 </html>
